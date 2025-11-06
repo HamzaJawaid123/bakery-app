@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Orders - ROYAL SWEET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ROYAL SWEET</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu & Shop</a></li>
+                <li><a href="custom.html" class="active">Custom Orders</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="custom-order-hero container" style="text-align: center; padding: 40px 0;">
+        <h1>👑 Special Occasion? Place a Custom Order!</h1>
+        <p>Bataiye aapko kaisa cake chahiye (design, size, flavour). Hamari team aapse jald hi contact karegi.</p>
+    </section>
+
+    <section class="custom-form-section container">
+        <form action="#" class="custom-form" onsubmit="alert('Aapki Custom Order ki request mil gayi hai! Hum jald hi aapse contact karenge.'); return false;">
+            
+            <h2>Aapki Zaroorat Kya Hai?</h2>
+            
+            <div class="form-group">
+                <label for="order-type">Order Ka Type Chunein: *</label>
+                <select id="order-type" name="order_type" required>
+                    <option value="">-- Type Select Karein --</option>
+                    <option value="cake">Custom Cake (Birthday, Wedding, etc.)</option>
+                    <option value="cupcakes">Custom Cupcakes/Desserts</option>
+                    <option value="bulk">Bulk Order (Large Quantity)</option>
+                    <option value="other">Doosra (Other)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Delivery/Pickup Ki Tarikh: *</label>
+                <input type="date" id="date" name="required_date" required min="2025-01-01"> </div>
+
+            <div class="form-group">
+                <label for="servings">Kitne Logon Ke Liye Chahiye (Servings/Weight):</label>
+                <input type="text" id="servings" name="servings" placeholder="E.g., 2KG Cake ya 50 Cupcakes">
+            </div>
+
+            <div class="form-group">
+                <label for="details">Design aur Flavour Ki Tafseelat: *</label>
+                <textarea id="details" name="details" rows="6" required placeholder="Flavour (Chocolate/Vanilla/Red Velvet), Theme, Colors, Text to be written, etc."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="file">Reference Image Upload Karein (Optional):</label>
+                <input type="file" id="file" name="reference_image" accept="image/*">
+                <small style="color: #666; display: block; margin-top: 5px;">File size limit 5MB.</small>
+            </div>
+            
+            <hr style="margin: 30px 0;">
+            
+            <h2>Aapki Contact Details</h2>
+            
+            <div class="form-group">
+                <label for="name">Aapka Naam: *</label>
+                <input type="text" id="name" name="customer_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number (WhatsApp): *</label>
+                <input type="text" id="phone" name="customer_phone" required placeholder="E.g., 03xx-xxxxxxx">
+            </div>
+
+            <button type="submit" class="btn primary-btn large-btn">Submit Custom Order Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROYAL SWEET. All rights reserved. | <a href="contact.html">Contact Us</a></p>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

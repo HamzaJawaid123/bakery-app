@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - ROYAL SWEET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ROYAL SWEET</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu & Shop</a></li>
+                <li><a href="custom.html">Custom Orders</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="active cart-link">🛒 (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cart-hero container">
+        <h1>🛍️ Your Shopping Cart</h1>
+        <p>Review your order before proceeding. Order confirmation will be handled on WhatsApp.</p>
+    </section>
+
+    <section class="checkout-layout container">
+        
+        <div class="cart-items-list">
+            <h2>Order Summary</h2>
+        </div>
+        
+        <div class="checkout-summary">
+            <h2>Order Total (PKR)</h2>
+            <div class="summary-details">
+            </div>
+            
+            <br>
+            <form action="#" method="POST" class="custom-form">
+                <h3>Delivery Information</h3>
+                <div class="form-group">
+                    <label for="option">Fulfillment:</label>
+                    <select id="option" name="fulfillment_option">
+                        <option value="delivery">Home Delivery (Karachi)</option>
+                        <option value="pickup">Self Pick-up (Store)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Delivery Address (Confirm on WhatsApp):</label>
+                    <textarea id="address" name="delivery_address" rows="3" required placeholder="Street, Block, City"></textarea>
+                </div>
+                
+                <button type="submit" class="btn primary-btn large-btn">Order via WhatsApp (PKR Total)</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROYAL SWEET. All prices in PKR. | Contact: 03222292155</p>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

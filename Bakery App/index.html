@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROYAL SWEET - Home</title>
+    
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* --- Layout & Utilities --- */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 5%;
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #a0522d; /* Sienna Brown */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+
+        nav ul a.active, nav ul a:hover {
+            color: #a0522d;
+            border-bottom: 2px solid #a0522d;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .primary-btn {
+            background-color: #a0522d;
+            color: white;
+            border: 2px solid #a0522d;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #a0522d;
+            border: 2px solid #a0522d;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        .large-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        /* --- Hero Section (Home Page Specific) --- */
+        .hero {
+            background-color: #fef5e7; /* Light creamy background */
+            text-align: center;
+            padding: 80px 5%;
+            margin-bottom: 40px;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            color: #a0522d;
+            margin-bottom: 15px;
+        }
+        .hero-content p {
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* --- Product Cards & Grid --- */
+        .best-sellers, .products {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .best-sellers h2, .category-title h3, .shop-header h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #a0522d;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-title h3 {
+            text-align: left;
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 180px; 
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .product-id-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #5a5a5a;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-bottom-left-radius: 8px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #a0522d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            min-height: 35px;
+        }
+        
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        /* --- Story Section --- */
+        .story h2 {
+            color: #a0522d;
+        }
+        .story p {
+            line-height: 1.6;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #333;
+            color: #eee;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+    
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ROYAL SWEET</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu & Shop</a></li>
+                <li><a href="custom.html">Custom Orders</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Freshly Baked Happiness Delivered!</h1>
+            <p>Quality ingredients, delightful flavors. Order online today.</p>
+            <a href="menu.html" class="btn primary-btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <section class="best-sellers container">
+        <h2>🔥 Our Best Sellers</h2>
+        <div class="products-grid">
+            
+            <div class="product-card" data-product-id="001" data-product-price="2500.00">
+                <img src="https://insanelygoodrecipes.com/wp-content/uploads/2024/06/chocolate-fudge-cake-9.jpg" alt="Chocolate Fudge Cake">
+                <p class="product-id-tag">ID: 001</p>
+                <h3>Chocolate Fudge Cake (1KG)</h3>
+                <p class="description">Rich, moist fudge cake with dark chocolate ganache.</p>
+                <p class="price">PKR 2,500.00</p>
+                <button class="add-to-cart" onclick="addToCart('001', 'Chocolate Fudge Cake', 2500.00)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-product-id="002" data-product-price="2200.00">
+                <img src="https://5.imimg.com/data5/ECOM/Default/2023/11/359823412/KN/QO/RP/190056589/1699464953323-sku-7671-0-500x500.jpg" alt="Pineapple Cream Cake">
+                <p class="product-id-tag">ID: 002</p>
+                <h3>Pineapple Cream Cake (1KG)</h3>
+                <p class="description">Light sponge, fresh cream, and candied pineapple slices.</p>
+                <p class="price">PKR 2,200.00</p>
+                <button class="add-to-cart" onclick="addToCart('002', 'Pineapple Cream Cake', 2200.00)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-product-id="006" data-product-price="1200.00">
+                <img src="https://outofthisworlddesserts.b-cdn.net/wp-content/uploads/2024/10/red-velvet-cupcakes.jpg" alt="Red Velvet Cupcakes">
+                <p class="product-id-tag">ID: 006</p>
+                <h3>Red Velvet Cupcakes (Set of 6)</h3>
+                <p class="description">Classic red velvet with tangy cream cheese frosting.</p>
+                <p class="price">PKR 1,200.00</p>
+                <button class="add-to-cart" onclick="addToCart('006', 'Red Velvet Cupcakes', 1200.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="009" data-product-price="350.00">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.UuZCsbjumEmadTTPojHLdgHaE5?pid=Api&P=0&h=220" alt="Chicken Bread Roll">
+                <p class="product-id-tag">ID: 009</p>
+                <h3>Chicken Bread Roll (Large)</h3>
+                <p class="description">Soft dough roll filled with creamy, spiced chicken.</p>
+                <p class="price">PKR 350.00</p>
+                <button class="add-to-cart" onclick="addToCart('009', 'Chicken Bread Roll', 350.00)">Add to Cart</button>
+            </div>
+
+        </div>
+        <a href="menu.html" class="btn secondary-btn">View All 14 Items</a>
+    </section>
+
+    <section class="story container" style="text-align: center; padding-bottom: 50px;">
+        <h2>Our Story</h2>
+        <p style="max-width: 600px; margin: 15px auto 30px auto; font-size: 1.1em;">Baked with passion in Karachi since 2018. We believe in crafting memorable moments, one perfect bite at a time. Quality is our guarantee.</p>
+        <a href="contact.html" class="btn secondary-btn">Find Our Location</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROYAL SWEET. Prices in PKR. | <a href="#" style="color: #eee;">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

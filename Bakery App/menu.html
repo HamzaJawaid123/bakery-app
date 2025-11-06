@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - ROYAL SWEET</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* --- Layout & Utilities --- */
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 5%;
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #a0522d; /* Sienna Brown */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 0;
+        }
+
+        nav ul a.active, nav ul a:hover {
+            color: #a0522d;
+            border-bottom: 2px solid #a0522d;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .primary-btn {
+            background-color: #a0522d;
+            color: white;
+            border: 2px solid #a0522d;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            color: #a0522d;
+            border: 2px solid #a0522d;
+        }
+
+        .btn:hover {
+            transform: scale(1.03);
+        }
+
+        .large-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+        
+        /* --- Product Cards & Grid --- */
+        .best-sellers, .products {
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .best-sellers h2, .category-title h3, .shop-header h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #a0522d;
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .category-title h3 {
+            text-align: left;
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 180px; 
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .product-id-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #5a5a5a;
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8em;
+            border-bottom-left-radius: 8px;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 1.3em;
+            color: #a0522d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            min-height: 35px;
+        }
+        
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        /* --- Form Styling (Contact/Custom) --- */
+        .custom-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* ... Add other CSS sections (Contact, Cart, Footer) if needed, but the main layout is here ... */
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" style="display: flex; flex-wrap: wrap;">ROYAL SWEET</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu & Shop</a></li>
+                <li><a href="custom.html">Custom Orders</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="shop-header container">
+        <h1>🍰 Our Complete Menu</h1>
+        <p>Find your next favorite treat. All prices are in **PKR**.</p>
+    </section>
+
+    <section class="products container">
+        
+        <div class="category-title"><h3>Cakes</h3></div>
+        <div class="products-grid">
+
+            <div class="product-card" data-product-id="001" data-product-price="2500.00">
+                <img src="https://insanelygoodrecipes.com/wp-content/uploads/2024/06/chocolate-fudge-cake-9.jpg" alt="Chocolate Fudge Cake">
+                <p class="product-id-tag">ID: 001</p>
+                <h3>Chocolate Fudge Cake (1KG)</h3>
+                <p class="description">Rich, moist fudge cake with dark chocolate ganache.</p>
+                <p class="price">PKR 2,500.00</p>
+                <button class="add-to-cart" onclick="addToCart('001', 'Chocolate Fudge Cake', 2500.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="002" data-product-price="2200.00">
+                <img src="https://5.imimg.com/data5/ECOM/Default/2023/11/359823412/KN/QO/RP/190056589/1699464953323-sku-7671-0-500x500.jpg" alt="Pineapple Cream Cake">
+                <p class="product-id-tag">ID: 002</p>
+                <h3>Pineapple Cream Cake (1KG)</h3>
+                <p class="description">Light sponge, fresh cream, and candied pineapple slices.</p>
+                <p class="price">PKR 2,200.00</p>
+                <button class="add-to-cart" onclick="addToCart('002', 'Pineapple Cream Cake', 2200.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="006" data-product-price="1200.00">
+                <img src="https://outofthisworlddesserts.b-cdn.net/wp-content/uploads/2024/10/red-velvet-cupcakes.jpg" alt="Red Velvet Cupcakes">
+                <p class="product-id-tag">ID: 006</p>
+                <h3>Red Velvet Cupcakes (Set of 6)</h3>
+                <p class="description">Classic red velvet with tangy cream cheese frosting.</p>
+                <p class="price">PKR 1,200.00</p>
+                <button class="add-to-cart" onclick="addToCart('006', 'Red Velvet Cupcakes', 1200.00)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-product-id="007" data-product-price="999.00">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.RqGE20pLBoFv3QG-Mb4sqgHaHa?pid=Api&P=0&h=220" alt="Three Milk Lotus Dream Cake">
+                <p class="product-id-tag">ID: 007</p>
+                <h3>Three Milk Lotus Dream Cake</h3>
+                <p class="description">Saffron-infused milk cake topped with Lotus crumble.</p>
+                <p class="price">PKR 999.00</p>
+                <button class="add-to-cart" onclick="addToCart('007', 'Three Milk Lotus Dream Cake', 999.00)">Add to Cart</button>
+            </div>
+        </div>
+
+
+        <div class="category-title"><h3>Pastries & Bread</h3></div>
+        <div class="products-grid">
+
+            <div class="product-card" data-product-id="003" data-product-price="450.00">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.sLv9ljpF6dGFngE_ZiYCdAHaHa?pid=Api&P=0&h=220" alt="Almond Croissant">
+                <p class="product-id-tag">ID: 003</p>
+                <h3>Almond Croissant</h3>
+                <p class="description">Flaky croissant filled and topped with sweet almond frangipane.</p>
+                <p class="price">PKR 450.00</p>
+                <button class="add-to-cart" onclick="addToCart('003', 'Almond Croissant', 450.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="015" data-product-price="100.00">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.9v03cKE1GgjdaIHx8hADJAHaE8?pid=Api&P=0&h=220" alt="Lemon Roll Dry Pastry">
+                <p class="product-id-tag">ID: 015</p>
+                <h3>Lemon Roll Dry Pastry</h3>
+                <p class="description">A light, tangy, lemon-flavored dry cake roll.</p>
+                <p class="price">PKR 100.00</p>
+                <button class="add-to-cart" onclick="addToCart('015', 'Lemon Roll Dry Pastry', 100.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="004" data-product-price="650.00">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.cFFDInEKpje_-ne55eKYRQHaE8?pid=Api&P=0&h=220" alt="Artisan Sourdough Loaf">
+                <p class="product-id-tag">ID: 004</p>
+                <h3>Artisan Sourdough Loaf</h3>
+                <p class="description">Naturally leavened bread with a perfect crust.</p>
+                <p class="price">PKR 650.00</p>
+                <button class="add-to-cart" onclick="addToCart('004', 'Artisan Sourdough Loaf', 650.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="008" data-product-price="250.00">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2025/1/482885883/YC/ZA/ZL/239070535/product-jpeg-500x500.jpg" alt="Plain Sandwich Bread">
+                <p class="product-id-tag">ID: 008</p>
+                <h3>Plain Sandwich Bread (Large)</h3>
+                <p class="description">Soft, white bread perfect for sandwiches.</p>
+                <p class="price">PKR 250.00</p>
+                <button class="add-to-cart" onclick="addToCart('008', 'Plain Sandwich Bread', 250.00)">Add to Cart</button>
+            </div>
+
+        </div>
+
+
+        <div class="category-title"><h3>Savories & Snacks</h3></div>
+        <div class="products-grid">
+
+            <div class="product-card" data-product-id="009" data-product-price="350.00">
+                <img src="https://1.bp.blogspot.com/-5kDGPWma-Kk/U7km36LBmaI/AAAAAAAAOLg/1M0aT4a6MqI/s1600/chicken+bread+rolls.jpg" alt="Chicken Bread Roll">
+                <p class="product-id-tag">ID: 009</p>
+                <h3>Chicken Bread Roll (Large)</h3>
+                <p class="description">Soft dough roll filled with creamy, spiced chicken.</p>
+                <p class="price">PKR 350.00</p>
+                <button class="add-to-cart" onclick="addToCart('009', 'Chicken Bread Roll', 350.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="010" data-product-price="120.00">
+                <img src="https://i.ytimg.com/vi/2lsDH7Lmw-0/maxresdefault.jpg" alt="Vegetable Patties">
+                <p class="product-id-tag">ID: 010</p>
+                <h3>Vegetable Patties (Each)</h3>
+                <p class="description">Crispy pastry filled with spiced mixed vegetables.</p>
+                <p class="price">PKR 120.00</p>
+                <button class="add-to-cart" onclick="addToCart('010', 'Vegetable Patties', 120.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="011" data-product-price="150.00">
+                <img src="https://ljpizza.com.au/wp-content/uploads/2024/08/pizza6-768x576.jpg" alt="Mini Chicken Pizza">
+                <p class="product-id-tag">ID: 011</p>
+                <h3>Mini Chicken Pizza (Each)</h3>
+                <p class="description">Small pan pizza with chicken toppings and cheese.</p>
+                <p class="price">PKR 150.00</p>
+                <button class="add-to-cart" onclick="addToCart('011', 'Mini Chicken Pizza', 150.00)">Add to Cart</button>
+            </div>
+            
+        </div>
+
+
+        <div class="category-title"><h3>Biscuits & Khatai</h3></div>
+        <div class="products-grid">
+
+            <div class="product-card" data-product-id="012" data-product-price="1250.00">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2025/2/488414195/BD/JD/MT/111010140/milk-rusk-500x500.jpeg" alt="Fruit Cake Rusk">
+                <p class="product-id-tag">ID: 012</p>
+                <h3>Fruit Cake Rusk (500g)</h3>
+                <p class="description">Twice-baked treat with dried fruits.</p>
+                <p class="price">PKR 1,250.00</p>
+                <button class="add-to-cart" onclick="addToCart('012', 'Fruit Cake Rusk', 1250.00)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-product-id="013" data-product-price="438.00">
+                <img src="https://khalifabakers.net/wp-content/uploads/2021/01/1000984_1_2.png" alt="Almond Khatai">
+                <p class="product-id-tag">ID: 013</p>
+                <h3>Almond Khatai (250g)</h3>
+                <p class="description">Classic Pakistani shortbread cookie with almonds.</p>
+                <p class="price">PKR 438.00</p>
+                <button class="add-to-cart" onclick="addToCart('013', 'Almond Khatai', 438.00)">Add to Cart</button>
+            </div>
+            
+            <div class="product-card" data-product-id="014" data-product-price="500.00">
+                <img src="https://d33wubrfki0l68.cloudfront.net/b6bde5191826159b83aba9f885c2d83f16fec6cb/64de0/images/uploads/2021_12_02_chocolate_chunk_cookies_2.jpg" alt="Chocolate Chunk Cookies">
+                <p class="product-id-tag">ID: 014</p>
+                <h3>Chocolate Chunk Cookies (Box)</h3>
+                <p class="description">Large, chewy cookies packed with chocolate chunks.</p>
+                <p class="price">PKR 500.00</p>
+                <button class="add-to-cart" onclick="addToCart('014', 'Chocolate Chunk Cookies', 500.00)">Add to Cart</button>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROYAL SWEET. All prices in PKR. | <a href="#">Terms</a></p>
+    </footer>
+</body>
+</html>

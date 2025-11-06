@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - ROYAL SWEET</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">ROYAL SWEET</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu & Shop</a></li>
+                <li><a href="custom.html">Custom Orders</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cart.html" class="cart-link">🛒 (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="contact-hero container">
+        <h1>💬 Get in Touch</h1>
+        <p>Whether you have a question about an order or just want to say hello, we're here to help.</p>
+    </section>
+
+    <section class="contact-details container">
+        <div class="contact-info">
+            <h2>Our Location & Hours</h2>
+            <p><strong>Address:</strong> FB Area, Block 15, Dastagir, Karachi, Pakistan</p>
+            <p><strong>Phone:</strong> (021) 123-4567</p>
+            <p><strong>Email:</strong> info@royalsweet.pk</p>
+            <br>
+            <h3>Hours of Operation (PKT):</h3>
+            <ul>
+                <li>Monday - Saturday: 9:00 AM to 9:00 PM</li>
+                <li>Sunday: 10:00 AM to 7:00 PM</li>
+            </ul>
+            
+            <br>
+            <div class="map-placeholder">
+                
+                <p>Map Placeholder (Embed Google Maps)</p>
+            </div>
+        </div>
+
+        <div class="contact-form-area">
+            <h2>Send Us a Message</h2>
+            <form action="/submit-contact" method="POST" class="custom-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <button type="submit" class="btn primary-btn large-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ROYAL SWEET. All rights reserved. | <a href="#">Social Links</a></p>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>
